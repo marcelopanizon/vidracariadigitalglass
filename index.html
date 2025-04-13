@@ -1,98 +1,131 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vidraçaria Digital Glass</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f7f7;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       color: #333;
     }
+
     header {
-      background: #000;
-      color: #fff;
-      padding: 2rem 1rem;
+      background: #e3f2fd;
+      padding: 20px;
       text-align: center;
     }
-    section {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
+
+    .logo {
+      max-height: 100px;
     }
-    .cta {
-      background: #333;
-      color: #fff;
+
+    .hero {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 40px 20px;
+      background-color: #ffffff;
     }
-    .cta a {
+
+    .hero h1 {
+      color: #1976d2;
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .whatsapp {
       display: inline-block;
-      background: #25d366;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 5px;
+      margin-top: 20px;
+      padding: 15px 25px;
+      background-color: #25D366;
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
+
+    .services button {
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
     .gallery img {
-      width: 100%;
-      border-radius: 10px;
+      width: 300px;
       height: 200px;
       object-fit: cover;
+      border-radius: 8px;
     }
+
     footer {
-      background: #222;
-      color: #ccc;
+      background-color: #e3f2fd;
       text-align: center;
-      padding: 1rem;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Vidraçaria Digital Glass</h1>
-    <p>Especialistas em Coberturas de Vidro e Soluções Sob Medida</p>
+    <img src="logo.png" alt="Logo da Vidraçaria Digital Glass" class="logo" />
   </header>
 
-  <section>
+  <div class="hero">
+    <h1>Transformamos sua visão em vidro</h1>
+    <p>Atendemos Florianópolis e região – Coberturas, Box, Espelhos, Sacadas e mais!</p>
+    <a href="https://wa.me/5548999711274?text=Olá!+Quero+um+orçamento+para+cobertura+de+vidro+em+Florianópolis+ou+região." class="whatsapp">Solicitar Orçamento</a>
+  </div>
+
+  <section class="services">
     <h2>Serviços</h2>
-    <ul>
-      <li>✅ Coberturas de Vidro Temperado</li>
-      <li>✅ Box de Banheiro</li>
-      <li>✅ Espelhos Sob Medida</li>
-      <li>✅ Guarda-Corpo e Fechamentos</li>
-    </ul>
+    <button>Espelhos</button>
+    <button>Box de Banheiro</button>
+    <button>Guarda Corpo</button>
+    <button>Coberturas</button>
+    <button>Envidraçamento de Sacada</button>
+    <button>Projetos Especiais</button>
   </section>
 
-  <section class="cta">
-    <h2>Solicite seu Orçamento Agora</h2>
-    <p>Atendimento em Florianópolis e região em até 50km</p>
-    <a href="https://wa.me/5548999711274?text=Olá!+Quero+um+orçamento+para+cobertura+de+vidro+em+Florianópolis+ou+região." target="_blank">Chamar no WhatsApp</a>
+  <section class="gallery">
+    <h2>Galeria</h2>
+    <img src="imagens/1.jpg" alt="Serviço 1" />
+    <img src="imagens/2.jpg" alt="Serviço 2" />
+    <img src="imagens/3.jpg" alt="Serviço 3" />
   </section>
 
-  <section>
-    <h2>Galeria de Projetos</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?glass,roof" alt="Cobertura de Vidro 1" />
-      <img src="https://source.unsplash.com/600x400/?glass,balcony" alt="Cobertura de Vidro 2" />
-      <img src="https://source.unsplash.com/600x400/?glass,bathroom" alt="Box de Vidro" />
-    </div>
+  <section class="about">
+    <h2>Quem Somos</h2>
+    <p>Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado.</p>
+    <p>Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendimento personalizado, ajudando você a encontrar a melhor solução para o seu espaço.</p>
+    <p>Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história!</p>
   </section>
 
   <footer>
-    <p>© 2025 Vidraçaria Digital Glass | Florianópolis e Região</p>
-    <p>Contato: (48) 99971-1274</p>
+    Rua Paulino Pedro Hermes, 2427 sala 3 - Florianópolis/SC<br />
+    © 2025 Vidraçaria Digital Glass
   </footer>
 </body>
 </html>
