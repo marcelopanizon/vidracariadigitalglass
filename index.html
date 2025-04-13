@@ -1,131 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vidraçaria Digital Glass</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      color: #ffffff;
+      background-color: #000000;
     }
 
     header {
-      background: #e3f2fd;
-      padding: 20px;
-      text-align: center;
+      background-color: #191919;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
     }
 
-    .logo {
-      max-height: 280px;
+    header img {
+      height: 40px;
     }
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #ffffff;
-    }
-
-    .hero h1 {
-      color: #1976d2;
-      font-size: 2.5em;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    .whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 25px;
-      background-color: #25D366;
-      color: white;
+    nav a {
+      color: #ffffff;
       text-decoration: none;
-      border-radius: 8px;
+      margin: 0 15px;
       font-weight: bold;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+    nav a:hover {
+      color: #00aaff;
     }
 
-    .services button {
-      margin: 10px;
-      padding: 15px 25px;
-      background-color: #1976d2;
+    .whatsapp-btn {
+      background-color: #25d366;
       color: white;
-      border: none;
+      padding: 10px 15px;
       border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .gallery {
+    .hero {
+      background: url('https://vidracariadigitalglass.com.br/wp-content/uploads/2023/08/10-2.jpg') center/cover no-repeat;
+      height: 100vh;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      gap: 15px;
-    }
-
-    .gallery img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    footer {
-      background-color: #e3f2fd;
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
+    }
+
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero a {
+      background-color: #00aaff;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .hero a:hover {
+      background-color: #0088cc;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #00aaff;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero a:hover {
+      background-color: #0088cc;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+    
+    /* Serviços */
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .servico {
+      background-color: #1c1c1c;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .servico div {
+      font-size: 2rem;
+    }
+
+    .servico h3 {
+      margin: 15px 0;
+    }
+
+    /* Sobre */
+    .sobre-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .sobre-texto {
+      flex: 2;
+      min-width: 280px;
+      color: #fff;
+    }
+
+    .sobre-img {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .sobre-img img {
+      width: 100%;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+  <!-- Cabeçalho -->
   <header>
-    <img src="logo.png" alt="Logo da Vidraçaria Digital Glass" class="logo" />
+    <img src="https://vidracariadigitalglass.com.br/wp-content/uploads/2023/08/logo.png" alt="Logo Digital Glass" />
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#sobre">Quem Somos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="whatsapp-btn" href="https://wa.me/5548998711274" target="_blank">WhatsApp</a>
   </header>
 
-  <div class="hero">
-    <h1>A um click da solução!</h1>
-    <p>Atendimento em toda Florianópolis e região </p>
-    <a href="https://wa.me/5548999711274?text=Olá!+Quero+um+orçamento" class="whatsapp">Solicitar Orçamento</a>
-  </div>
-
-  <section class="services">
-    <h2>Serviços</h2>
-    <button>Espelhos</button>
-    <button>Box de Banheiro</button>
-    <button>Guarda Corpo</button>
-    <button>Coberturas em vidro</button>
-    <button>Envidraçamento de Sacada</button>
-    <button>Projetos Especiais</button>
+  <!-- Banner Principal -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Sua vidraçaria de confiança à um click de distância</h1>
+      <a href="https://wa.me/5548998711274" target="_blank">Solicitar Orçamento</a>
+    </div>
   </section>
 
-  <section class="gallery">
-    <h2>Galeria</h2>
-    <img src="imagens/1.jpg" alt="Serviço 1" />
-    <img src="imagens/2.jpg" alt="Serviço 2" />
-    <img src="imagens/3.jpg" alt="Serviço 3" />
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="servicos-grid">
+      <div class="servico">
+        <div>🚿</div>
+        <h3>Box para Banheiro</h3>
+        <p>Projetos sob medida para conforto e sofisticação.</p>
+      </div>
+      <div class="servico">
+        <div>🏢</div>
+        <h3>Fechamento de Sacadas</h3>
+        <p>Fechamento com vidro para segurança e elegância.</p>
+      </div>
+      <div class="servico">
+        <div>☀️</div>
+        <h3>Coberturas de Vidro</h3>
+        <p>Proteção com beleza e durabilidade.</p>
+      </div>
+      <div class="servico">
+        <div>🪞</div>
+        <h3>Espelhos Decorativos</h3>
+        <p>Espelhos sob medida para todos os ambientes.</p>
+      </div>
+      <div class="servico">
+        <div>🧱</div>
+        <h3>Guarda-Corpo</h3>
+        <p>Segurança e transparência em escadas e sacadas.</p>
+      </div>
+      <div class="servico">
+        <div>🛠️</div>
+        <h3>Projetos Especiais</h3>
+        <p>Soluções personalizadas em vidro para qualquer espaço.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="about">
-    <h2>Quem Somos</h2>
-    <p>Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado.</p>
-    <p>Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendimento personalizado, ajudando você a encontrar a melhor solução para o seu espaço.</p>
-    <p>Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história!</p>
+  <!-- Quem Somos -->
+  <section id="sobre">
+    <div class="sobre-container">
+      <div class="sobre-img">
+        <img src="https://vidracariadigitalglass.com.br/wp-content/uploads/2023/08/vidracaria-digital-glass.jpeg" alt="Fachada da Vidraçaria" />
+      </div>
+      <div class="sobre-texto">
+        <h2>Quem Somos</h2>
+        <p>
+          A Digital Glass é uma vidraçaria especializada na instalação de vidros e espelhos sob medida. Com profissionais altamente qualificados e equipamentos de última geração, oferecemos o melhor em qualidade e segurança para os nossos clientes. Atuamos em diversas áreas, incluindo vidros para box de banheiro, portas, janelas, fachadas e espelhos decorativos.
+          Nosso compromisso é garantir a satisfação total dos nossos clientes, oferecendo sempre um atendimento personalizado, prazos rápidos e preços justos.
+        </p>
+      </div>
+    </div>
   </section>
-
-  <footer>
-    Rua Paulino Pedro Hermes, 2427 sala 3 - São josé .jardim Nossa Senhora do Rosário - Santa Catarina<br />
-    © 2025 Vidraçaria Digital Glass
-  </footer>
 </body>
 </html>
