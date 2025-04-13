@@ -20,10 +20,8 @@
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1581090700227-1e8e1f9a0f4b') no-repeat center center;
-      background-size: cover;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 20px 0;
       position: relative;
     }
 
@@ -51,22 +49,31 @@
     }
 
     .hero {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.5);
       height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 10px;
+      position: relative;
+    }
+
+    .hero img {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
     }
 
     .hero-content {
-      padding: 10px;
+      z-index: 2;
     }
 
     .hero h1 {
       font-size: 1.4rem;
-      color: #333;
+      color: #fff;
       margin-bottom: 12px;
       font-weight: 500;
     }
@@ -94,6 +101,10 @@
       font-size: 2.3rem;
       margin-bottom: 30px;
       color: #00aaff;
+    }
+
+    #sobre {
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     #sobre h2 {
@@ -186,22 +197,14 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo Digital Glass" />
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#sobre">Quem Somos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h1>Sua vidraçaria de confiança à um click de distância</h1>
-      <a href="https://wa.me/5548998711274" target="_blank">Solicitar Orçamento</a>
+    <div class="hero">
+      <img src="logo.png" alt="Logo Digital Glass" />
+      <div class="hero-content">
+        <h1>Sua vidraçaria de confiança à um click de distância</h1>
+        <a href="https://wa.me/5548998711274" target="_blank">Solicitar Orçamento</a>
+      </div>
     </div>
-  </section>
+  </header>
 
   <section id="servicos">
     <h2>Nossos Serviços</h2>
@@ -235,60 +238,5 @@
       <img src="https://via.placeholder.com/400" alt="Projeto 1" />
       <img src="https://via.placeholder.com/400" alt="Projeto 2" />
       <img src="https://via.placeholder.com/400" alt="Projeto 3" />
-      <img src="https://via.placeholder.com/400" alt="Projeto 4" />
-    </div>
-  </section>
-
-  <!-- Categorias -->
-  <section id="box">
-    <h2>Box para Banheiro</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300?text=Box+1" />
-      <img src="https://via.placeholder.com/400x300?text=Box+2" />
-      <img src="https://via.placeholder.com/400x300?text=Box+3" />
-    </div>
-  </section>
-
-  <section id="sacadas">
-    <h2>Fechamento de Sacadas</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300?text=Sacada+1" />
-      <img src="https://via.placeholder.com/400x300?text=Sacada+2" />
-      <img src="https://via.placeholder.com/400x300?text=Sacada+3" />
-    </div>
-  </section>
-
-  <section id="espelhos">
-    <h2>Espelhos Decorativos</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300?text=Espelho+1" />
-      <img src="https://via.placeholder.com/400x300?text=Espelho+2" />
-      <img src="https://via.placeholder.com/400x300?text=Espelho+3" />
-    </div>
-  </section>
-
-  <section id="coberturas">
-    <h2>Coberturas de Vidro</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300?text=Cobertura+1" />
-      <img src="https://via.placeholder.com/400x300?text=Cobertura+2" />
-      <img src="https://via.placeholder.com/400x300?text=Cobertura+3" />
-    </div>
-  </section>
-
-  <section id="projetos-especiais">
-    <h2>Projetos Especiais</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300?text=Especial+1" />
-      <img src="https://via.placeholder.com/400x300?text=Especial+2" />
-      <img src="https://via.placeholder.com/400x300?text=Especial+3" />
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Vidraçaria Digital Glass. Todos os direitos reservados.</p>
-    <p class="endereco">Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José - SC</p>
-    <a href="https://wa.me/5548998711274" target="_blank">Fale Conosco</a>
-  </footer>
-</body>
-</html>
+      <
+        
