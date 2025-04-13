@@ -26,13 +26,17 @@
     }
 
     header img {
-      height: 80px;
+      height: 120px;
+      width: 100%;
+      object-fit: cover;
       display: block;
       margin: 0 auto;
     }
 
     nav {
       margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
     }
 
     nav a {
@@ -49,7 +53,7 @@
     }
 
     .hero {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.7);  /* Branco translúcido */
       height: 50vh;
       display: flex;
       align-items: center;
@@ -59,21 +63,9 @@
       position: relative;
     }
 
-    .hero img {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      z-index: 2;
-    }
-
     .hero h1 {
       font-size: 1.4rem;
-      color: #fff;
+      color: #333;
       margin-bottom: 12px;
       font-weight: 500;
     }
@@ -104,11 +96,11 @@
     }
 
     #sobre {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(255, 255, 255, 0.7); /* Branco translúcido */
     }
 
     #sobre h2 {
-      color: white;
+      color: #333;
     }
 
     .button-group {
@@ -161,82 +153,4 @@
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .galeria img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer a {
-      color: #00aaff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      color: #0088cc;
-    }
-
-    .endereco {
-      font-size: 0.9rem;
-      color: #fff;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="hero">
-      <img src="logo.png" alt="Logo Digital Glass" />
-      <div class="hero-content">
-        <h1>Sua vidraçaria de confiança à um click de distância</h1>
-        <a href="https://wa.me/5548998711274" target="_blank">Solicitar Orçamento</a>
-      </div>
-    </div>
-  </header>
-
-  <section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <div class="button-group">
-      <a href="#box">Box para Banheiro</a>
-      <a href="#sacadas">Fechamento de Sacadas</a>
-      <a href="#espelhos">Espelhos Decorativos</a>
-      <a href="#coberturas">Coberturas de Vidro</a>
-      <a href="#projetos-especiais">Projetos Especiais</a>
-    </div>
-  </section>
-
-  <section id="sobre">
-    <div class="sobre-container">
-      <div class="sobre-img">
-        <img src="https://vidracariadigitalglass.com.br/wp-content/uploads/2023/08/vidracaria-digital-glass.jpeg" alt="Fachada da Vidraçaria" />
-      </div>
-      <div class="sobre-texto">
-        <h2>Quem Somos</h2>
-        <p>
-          A Digital Glass é uma vidraçaria especializada na instalação de vidros e espelhos sob medida. Com profissionais altamente qualificados e equipamentos de última geração, oferecemos o melhor em qualidade e segurança para os nossos clientes. Atuamos em diversas áreas, incluindo vidros para box de banheiro, portas, janelas, fachadas e espelhos decorativos.
-          Nosso compromisso é garantir a satisfação total dos nossos clientes, oferecendo sempre um atendimento personalizado, prazos rápidos e preços justos.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="galeria">
-    <h2>Galeria de Projetos</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400" alt="Projeto 1" />
-      <img src="https://via.placeholder.com/400" alt="Projeto 2" />
-      <img src="https://via.placeholder.com/400" alt="Projeto 3" />
-      <
-        
+      
