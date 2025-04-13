@@ -13,28 +13,31 @@
 
     body {
       font-family: Arial, sans-serif;
-      color: #ffffff;
-      background-color: #000000;
+      background-color: #f8f9fa;
+      color: #333;
     }
 
     header {
-      background-color: #191919;
+      background-color: #ffffff;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header img {
       height: 40px;
     }
 
+    nav {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     nav a {
-      color: #ffffff;
+      color: #333;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
@@ -64,13 +67,14 @@
     }
 
     .hero-content {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.7);
       padding: 40px;
       border-radius: 12px;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      color: #333;
       margin-bottom: 20px;
     }
 
@@ -93,59 +97,34 @@
 
     section h2 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 40px;
       color: #00aaff;
     }
 
-    .whatsapp-btn {
-      background-color: #25d366;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+    /* Botões para categorias */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .hero a:hover {
+    .button-group a {
+      background-color: #00aaff;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+
+    .button-group a:hover {
       background-color: #0088cc;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      nav {
-        display: none;
-      }
-    }
-    
-    /* Serviços */
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .servico {
-      background-color: #1c1c1c;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .servico div {
-      font-size: 2rem;
-    }
-
-    .servico h3 {
-      margin: 15px 0;
-    }
-
-    /* Sobre */
+    /* Seção de Sobre */
     .sobre-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -158,7 +137,6 @@
     .sobre-texto {
       flex: 2;
       min-width: 280px;
-      color: #fff;
     }
 
     .sobre-img {
@@ -169,6 +147,20 @@
     .sobre-img img {
       width: 100%;
       border-radius: 12px;
+    }
+
+    /* Galeria */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -183,7 +175,6 @@
       <a href="#sobre">Quem Somos</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="whatsapp-btn" href="https://wa.me/5548999711274" target="_blank">WhatsApp</a>
   </header>
 
   <!-- Banner Principal -->
@@ -194,40 +185,14 @@
     </div>
   </section>
 
-  <!-- Serviços -->
+  <!-- Botões de Categorias -->
   <section id="servicos">
     <h2>Nossos Serviços</h2>
-    <div class="servicos-grid">
-      <div class="servico">
-        <div>🚿</div>
-        <h3>Box para Banheiro</h3>
-        <p>Projetos sob medida para conforto e sofisticação.</p>
-      </div>
-      <div class="servico">
-        <div>🏢</div>
-        <h3>Fechamento de Sacadas</h3>
-        <p>Fechamento com vidro para segurança e elegância.</p>
-      </div>
-      <div class="servico">
-        <div>☀️</div>
-        <h3>Coberturas de Vidro</h3>
-        <p>Proteção com beleza e durabilidade.</p>
-      </div>
-      <div class="servico">
-        <div>🪞</div>
-        <h3>Espelhos Decorativos</h3>
-        <p>Espelhos sob medida para todos os ambientes.</p>
-      </div>
-      <div class="servico">
-        <div>🧱</div>
-        <h3>Guarda-Corpo</h3>
-        <p>Segurança e transparência em escadas e sacadas.</p>
-      </div>
-      <div class="servico">
-        <div>🛠️</div>
-        <h3>Projetos Especiais</h3>
-        <p>Soluções personalizadas em vidro para qualquer espaço.</p>
-      </div>
+    <div class="button-group">
+      <a href="#box">Box para Banheiro</a>
+      <a href="#sacadas">Fechamento de Sacadas</a>
+      <a href="#espelhos">Espelhos Decorativos</a>
+      <a href="#coberturas">Coberturas de Vidro</a>
     </div>
   </section>
 
@@ -243,8 +208,5 @@
           A Digital Glass é uma vidraçaria especializada na instalação de vidros e espelhos sob medida. Com profissionais altamente qualificados e equipamentos de última geração, oferecemos o melhor em qualidade e segurança para os nossos clientes. Atuamos em diversas áreas, incluindo vidros para box de banheiro, portas, janelas, fachadas e espelhos decorativos.
           Nosso compromisso é garantir a satisfação total dos nossos clientes, oferecendo sempre um atendimento personalizado, prazos rápidos e preços justos.
         </p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+      </
+        
