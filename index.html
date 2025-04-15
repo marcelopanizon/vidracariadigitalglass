@@ -72,41 +72,15 @@
     }
     .swiper-slide img {
       width: 100%;
-      max-width: 600px;
-      height: auto;
+      max-height: 500px;
+      object-fit: cover;
       border-radius: 10px;
-      margin: 0 auto;
-      display: block;
     }
     .swiper-slide p {
       text-align: center;
       margin-top: 10px;
       font-size: 1rem;
       color: #fff;
-    }
-    #sobre {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-    #sobre .sobre-container {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
-    .sobre-texto {
-      flex: 1;
-      min-width: 300px;
-      color: #000;
-    }
-    .sobre-img {
-      flex: 1;
-      min-width: 300px;
-    }
-    .sobre-img img {
-      width: 100%;
-      border-radius: 10px;
     }
     footer {
       background-color: #333;
@@ -127,14 +101,12 @@
       <a href="#contato">Contato</a>
     </nav>
   </header>
-
   <section class="hero" id="home">
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
     <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
     <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
   </section>
-
   <section id="servicos">
     <h2>Nossos Serviços</h2>
     <div class="button-group">
@@ -142,10 +114,13 @@
       <a href="#sacadas">Sacadas</a>
       <a href="#espelhos">Espelhos</a>
       <a href="#coberturas">Coberturas</a>
-      <a href="#projetos-especiais">Projetos Especiais</a>
       <a href="#portas">Portas</a>
+      <a href="#projetos-especiais">Projetos Especiais</a>
     </div>
   </section>
+
+  <!-- Sessões com carrossel dinâmico -->
+  <div id="galerias"></div>
 
   <section id="sobre">
     <div class="sobre-container">
@@ -158,112 +133,63 @@
       </div>
     </div>
   </section>
-
-  <!-- Carrosséis reutilizando o mesmo swiper -->
-  <section id="box">
-    <h2>Box para Banheiro</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="box padrão incolor e kit preto.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="box champagne.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="Box rose gold.jpg" alt=""></div>
-        <!-- Adicione mais imagens: box1.jpg até box15.jpg -->
-        <!-- Exemplo -->
-        <div class="swiper-slide"><img src="box1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="box2.jpg" alt=""></div>
-        <!-- ... -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="sacadas">
-    <h2>Fechamento de Sacadas</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="sacada1.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="sacada2.jpg" alt=""></div>
-        <!-- ... até sacada6.jpg -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="espelhos">
-    <h2>Espelhos Decorativos</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- espelho1.jpg até espelho11.jpg -->
-        <div class="swiper-slide"><img src="espelho1.jpg" alt=""></div>
-        <!-- ... -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="coberturas">
-    <h2>Coberturas de Vidro</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- cobertura1.jpg até coberturaXX.jpg -->
-        <div class="swiper-slide"><img src="cobertura1.jpg" alt=""></div>
-        <!-- ... -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="projetos-especiais">
-    <h2>Projetos Especiais</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- especial1.jpg até especial39.jpg -->
-        <div class="swiper-slide"><img src="especial1.jpg" alt=""></div>
-        <!-- ... -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="portas">
-    <h2>Portas</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- porta1.jpg até porta17.jpg -->
-        <div class="swiper-slide"><img src="porta1.jpg" alt=""></div>
-        <!-- ... -->
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <footer id="contato">
+  <footer>
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swipers = document.querySelectorAll('.mySwiper');
-    swipers.forEach(swiperEl => {
-      new Swiper(swiperEl, {
+    const secoes = [
+      { id: 'box', titulo: 'Box para Banheiro', prefixo: 'box', total: 14 },
+      { id: 'sacadas', titulo: 'Fechamento de Sacadas', prefixo: 'sacada', total: 4 },
+      { id: 'espelhos', titulo: 'Espelhos Decorativos', prefixo: 'espelho', total: 10 },
+      { id: 'coberturas', titulo: 'Coberturas de Vidro', prefixo: 'cobertura', total: 10 },
+      { id: 'portas', titulo: 'Portas de Vidro', prefixo: 'porta', total: 10 },
+      { id: 'projetos-especiais', titulo: 'Projetos Especiais', prefixo: 'especial', total: 10 },
+    ];
+
+    const container = document.getElementById("galerias");
+    secoes.forEach(secao => {
+      const section = document.createElement("section");
+      section.id = secao.id;
+      section.innerHTML = `
+        <h2>${secao.titulo}</h2>
+        <div class="swiper ${secao.id}Swiper">
+          <div class="swiper-wrapper">
+            ${Array.from({ length: secao.total }, (_, i) => `
+              <div class="swiper-slide">
+                <img src="${secao.prefixo}${i + 1}.jpg" alt="${secao.titulo} ${i + 1}" />
+              </div>`).join('')}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      `;
+      container.appendChild(section);
+
+      new Swiper(`.${secao.id}Swiper`, {
         loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
         pagination: {
-          el: swiperEl.querySelector('.swiper-pagination'),
+          el: '.swiper-pagination',
           clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
         },
       });
     });
-  </script>
-</body>
-</html>
-
-    loadSlides("box-swiper", "box", 14);
-    loadSlides("sacada-swiper", "sacada", 4);
-    loadSlides("espelho-swiper", "espelho", 11);
-    loadSlides("cobertura-swiper", "cobertura", 10);
-    loadSlides("especial-swiper", "especial", 10);
-    loadSlides("porta-swiper", "porta", 8);
   </script>
 </body>
 </html>
