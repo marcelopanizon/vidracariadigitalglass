@@ -65,7 +65,16 @@
       text-decoration: none;
       font-size: 1rem;
     }
-    /* Seção Quem Somos */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+    }
     #sobre { background-color: rgba(255, 255, 255, 0.8); }
     #sobre .sobre-container {
       max-width: 1000px;
@@ -96,30 +105,13 @@
     }
     footer a { color: #00aaff; text-decoration: none; }
     .endereco { font-size: 0.9rem; margin-top: 10px; }
-    /* Estilos para o Swiper */
-    .swiper {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    .swiper-button-next, .swiper-button-prev {
-      color: #00aaff;
-    }
-    .swiper-pagination-bullet {
-      background-color: #00aaff;
-    }
-    /* Estilos para telas menores */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 1rem; }
-      .button-group { flex-direction: column; }
-      .button-group a { width: 100%; text-align: center; }
-      .sobre-container { flex-direction: column; }
-      .sobre-img, .sobre-texto { min-width: 100%; }
+    .swiper { width: 100%; max-width: 800px; margin: 0 auto; }
+    .swiper-slide img { width: 100%; border-radius: 10px; }
+    .swiper-slide p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff;
     }
   </style>
 </head>
@@ -130,16 +122,15 @@
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Quem Somos</a>
       <a href="#contato">Contato</a>
+      <a href="#portas">Portas</a>
     </nav>
   </header>
-  
   <section class="hero" id="home">
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
     <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
     <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
   </section>
-  
   <section id="servicos">
     <h2>Nossos Serviços</h2>
     <div class="button-group">
@@ -151,8 +142,6 @@
       <a href="#portas">Portas</a>
     </div>
   </section>
-  
-  <!-- Seção Quem Somos (imagem alterada para logo.png) -->
   <section id="sobre">
     <div class="sobre-container">
       <div class="sobre-img">
@@ -160,146 +149,115 @@
       </div>
       <div class="sobre-texto">
         <h2>Quem Somos</h2>
-        <p> Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento.Contamos com uma equipe especializada e um atendimento personalizado e humanizado .Nosso compromisso é com a excelência e a satisfação do cliente.Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendente personalizado ajudando você a encontar a melhor solução para o seu espaço.Agradecemos por considerar a Digital Glass para suas necessidades em vidro.Estamos ansiosos para trabalhar com você e fazer parte da sua história! </p>
+        <p>Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado. Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendimento personalizado ajudando você a encontrar a melhor solução para o seu espaço. Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história!</p>
       </div>
     </div>
   </section>
-  
-  <!-- Seção Box para Banheiro -->
   <section id="box">
     <h2>Box para Banheiro</h2>
-    <div class="swiper mySwiper" id="box-swiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Imagens originais da sessão -->
         <div class="swiper-slide">
-          <img src="box padrão incolor e kit preto.jpg" alt="Box incolor com kit preto" />
-          <p>Box incolor com kit preto</p>
+          <img src="box1.jpg" alt="Box 1" />
+          <p>Box 1</p>
         </div>
         <div class="swiper-slide">
-          <img src="box champagne.jpg" alt="Box champagne" />
-          <p>Box champagne</p>
+          <img src="box2.jpg" alt="Box 2" />
+          <p>Box 2</p>
         </div>
-        <div class="swiper-slide">
-          <img src="Box rose gold.jpg" alt="Box rose gold" />
-          <p>Box rose gold</p>
-        </div>
-        <!-- Slides adicionais: box1.jpg a box15.jpg serão adicionados abaixo -->
+        <!-- Adicionar as outras imagens -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
-  <!-- Seção Sacadas -->
   <section id="sacadas">
     <h2>Fechamento de Sacadas</h2>
-    <div class="swiper mySwiper" id="sacadas-swiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Slides serão adicionados dinamicamente para sacada1.jpg a sacada6.jpg -->
+        <div class="swiper-slide">
+          <img src="sacada1.jpg" alt="Sacada 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="sacada2.jpg" alt="Sacada 2" />
+        </div>
+        <!-- Adicionar as outras imagens -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
-  <!-- Seção Espelhos -->
   <section id="espelhos">
     <h2>Espelhos Decorativos</h2>
-    <div class="swiper mySwiper" id="espelhos-swiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Slides serão adicionados dinamicamente para espelho1.jpg a espelho11.jpg -->
+        <div class="swiper-slide">
+          <img src="espelho1.jpg" alt="Espelho 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="espelho2.jpg" alt="Espelho 2" />
+        </div>
+        <!-- Adicionar as outras imagens -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
-  <!-- Seção Coberturas (galeria fixa) -->
-  <section id="coberturas">
-    <h2>Coberturas de Vidro</h2>
-    <div class="galeria">
-      <img src="https://i.imgur.com/gnpUOM0.jpg" alt="Cobertura 1" />
-      <img src="https://i.imgur.com/kz8mQKD.jpg" alt="Cobertura 2" />
-      <img src="https://i.imgur.com/B69SvDG.jpg" alt="Cobertura 3" />
-    </div>
-  </section>
-  
-  <!-- Seção Projetos Especiais -->
   <section id="projetos-especiais">
     <h2>Projetos Especiais</h2>
-    <div class="swiper mySwiper" id="projetos-especiais-swiper">
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Slides serão adicionados dinamicamente para especial1.jpg a especial39.jpg -->
+        <script>
+          const swiperWrapper = document.querySelector('.swiper-wrapper');
+          for (let i = 1; i <= 39; i++) {
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            slide.innerHTML = `<img src="especiais (${i}).jpg" alt="Especial ${i}" />`;
+            swiperWrapper.appendChild(slide);
+          }
+        </script>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
-  <!-- Seção Portas -->
   <section id="portas">
-    <h2>Portas</h2>
-    <div class="swiper mySwiper" id="portas-swiper">
+    <h2>Portas de Vidro</h2>
+    <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Slides serão adicionados dinamicamente para porta1.jpg a porta17.jpg -->
+        <div class="swiper-slide">
+          <img src="porta1.jpg" alt="Porta 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="porta2.jpg" alt="Porta 2" />
+        </div>
+        <!-- Adicionar as outras imagens -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
   <footer>
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
-  
-  <!-- Swiper JS -->  
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-  <!-- Script para adicionar slides e inicializar os Swipers -->
   <script>
-    // Função para adicionar slides dinamicamente sem parênteses no nome
-    function addSlides(id, prefix, count) {
-      const container = document.querySelector(`#${id} .swiper-wrapper`);
-      for (let i = 1; i <= count; i++) {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        slide.innerHTML = `<img src="${prefix}${i}.jpg" alt="${prefix} ${i}" />`;
-        container.appendChild(slide);
-      }
-    }
-    
-    // Adiciona os slides adicionais antes de inicializar os Swipers:
-    addSlides('box-swiper', 'box', 15);            // Slides para box1.jpg a box15.jpg
-    addSlides('sacadas-swiper', 'sacada', 6);         // Slides para sacada1.jpg a sacada6.jpg
-    addSlides('espelhos-swiper', 'espelho', 11);      // Slides para espelho1.jpg a espelho11.jpg
-    addSlides('projetos-especiais-swiper', 'especial', 39);  // Slides para especial1.jpg a especial39.jpg
-    addSlides('portas-swiper', 'porta', 17);          // Slides para porta1.jpg a porta17.jpg
-    
-    // Inicializa os carrosséis depois que os slides foram adicionados
-    const swipers = document.querySelectorAll('.mySwiper');
-    swipers.forEach((slider) => {
-      new Swiper(slider, {
-        loop: true,
-        slidesPerView: 1,
-        pagination: {
-          el: slider.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-        navigation: {
-          nextEl: slider.querySelector('.swiper-button-next'),
-          prevEl: slider.querySelector('.swiper-button-prev'),
-        },
-        breakpoints: {
-          1024: { slidesPerView: 2 },
-          768: { slidesPerView: 1 }
-        }
-      });
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
   </script>
 </body>
