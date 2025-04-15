@@ -51,32 +51,26 @@
       margin-bottom: 30px;
       color: #fff;
     }
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .swiper {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .button-group a {
-      background-color: #00aaff;
-      color: #fff;
-      padding: 14px 28px;
+    .swiper-slide img {
+      width: 100%;
       border-radius: 10px;
-      text-decoration: none;
+    }
+    .swiper-slide p {
+      text-align: center;
+      margin-top: 10px;
       font-size: 1rem;
+      color: #fff;
     }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+    #sobre {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
     }
-    .galeria img {
-      width: 50%;
-      border-radius: 12px;
-    }
-    #sobre { background-color: rgba(255, 255, 255, 0.8); }
-    #sobre .sobre-container {
+    .sobre-container {
       max-width: 1000px;
       margin: auto;
       display: flex;
@@ -87,7 +81,6 @@
     .sobre-texto {
       flex: 1;
       min-width: 300px;
-      color: #000;
     }
     .sobre-img {
       flex: 1;
@@ -103,15 +96,9 @@
       padding: 20px;
       text-align: center;
     }
-    footer a { color: #00aaff; text-decoration: none; }
-    .endereco { font-size: 0.9rem; margin-top: 10px; }
-    .swiper { width: 100%; max-width: 800px; margin: 0 auto; }
-    .swiper-slide img { width: 100%; border-radius: 10px; }
-    .swiper-slide p {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #fff;
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -128,11 +115,11 @@
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
     <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
-    <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/digital.glass" target="_blank">Instagram</a>
   </section>
   <section id="servicos">
     <h2>Nossos Serviços</h2>
-    <div class="button-group">
+    <div class="button-group" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
       <a href="#box">Box</a>
       <a href="#sacadas">Sacadas</a>
       <a href="#espelhos">Espelhos</a>
@@ -148,115 +135,13 @@
       </div>
       <div class="sobre-texto">
         <h2>Quem Somos</h2>
-        <p>Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado. Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendimento personalizado, ajudando você a encontrar a melhor solução para o seu espaço. Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história!</p>
+        <p> Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento.Contamos com uma equipe especializada e um atendimento personalizado e humanizado .Nosso compromisso é com a excelência e a satisfação do cliente.Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendente personalizado ajudando você a encontar a melhor solução para o seu espaço.Agradecemos por considerar a Digital Glass para suas necessidades em vidro.Estamos ansiosos para trabalhar com você e fazer parte da sua história! </p>
       </div>
-    </div>
-  </section>
-  
-  <!-- Carrossel Box -->
-  <section id="box">
-    <h2>Box para Banheiro</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="box1.jpg" alt="Box 1" />
-          <p>Box 1</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="box2.jpg" alt="Box 2" />
-          <p>Box 2</p>
-        </div>
-        <!-- Continue até box15 -->
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <!-- Carrossel Sacadas -->
-  <section id="sacadas">
-    <h2>Fechamento de Sacadas</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="sacada1.jpg" alt="Sacada 1" />
-          <p>Sacada 1</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="sacada2.jpg" alt="Sacada 2" />
-          <p>Sacada 2</p>
-        </div>
-        <!-- Continue até sacada6 -->
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <!-- Carrossel Espelhos -->
-  <section id="espelhos">
-    <h2>Espelhos Decorativos</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="espelho1.jpg" alt="Espelho 1" />
-          <p>Espelho 1</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="espelho2.jpg" alt="Espelho 2" />
-          <p>Espelho 2</p>
-        </div>
-        <!-- Continue até espelho11 -->
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <!-- Carrossel Projetos Especiais -->
-  <section id="projetos-especiais">
-    <h2>Projetos Especiais</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="especial1.jpg" alt="Especial 1" />
-          <p>Especial 1</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="especial2.jpg" alt="Especial 2" />
-          <p>Especial 2</p>
-        </div>
-        <!-- Continue até especial39 -->
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-
-  <!-- Carrossel Portas -->
-  <section id="portas">
-    <h2>Portas de Vidro</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="porta1.jpg" alt="Porta 1" />
-          <p>Porta 1</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="porta2.jpg" alt="Porta 2" />
-          <p>Porta 2</p>
-        </div>
-        <!-- Continue até porta17 -->
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+  <!-- As seções com carrossel -->
+  <div id="carrossel-secoes"></div>
 
   <footer>
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
@@ -265,17 +150,48 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swipers = document.querySelectorAll('.swiper');
-    swipers.forEach(swiper => {
-      new Swiper(swiper, {
+    const secoes = [
+      { id: 'box', titulo: 'Box para Banheiro', prefixo: 'box', total: 15 },
+      { id: 'sacadas', titulo: 'Fechamento de Sacadas', prefixo: 'sacada', total: 6 },
+      { id: 'espelhos', titulo: 'Espelhos Decorativos', prefixo: 'espelho', total: 11 },
+      { id: 'coberturas', titulo: 'Coberturas de Vidro', prefixo: 'cobertura', total: 3 },
+      { id: 'projetos-especiais', titulo: 'Projetos Especiais', prefixo: 'especial', total: 39 },
+      { id: 'portas', titulo: 'Portas', prefixo: 'porta', total: 17 }
+    ];
+
+    const container = document.getElementById('carrossel-secoes');
+
+    secoes.forEach(secao => {
+      const section = document.createElement('section');
+      section.id = secao.id;
+
+      section.innerHTML = `
+        <h2>${secao.titulo}</h2>
+        <div class="swiper ${secao.id}Swiper">
+          <div class="swiper-wrapper">
+            ${Array.from({ length: secao.total }, (_, i) => `
+              <div class="swiper-slide">
+                <img src="${secao.prefixo}${i + 1}.jpg" alt="${secao.prefixo}${i + 1}" />
+              </div>
+            `).join('')}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      `;
+
+      container.appendChild(section);
+
+      new Swiper(`.${secao.id}Swiper`, {
         loop: true,
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
           clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       });
     });
