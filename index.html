@@ -152,7 +152,7 @@
     </div>
   </section>
   
-  <!-- Seção Quem Somos com a imagem alterada para logo.png -->
+  <!-- Seção Quem Somos (imagem alterada para logo.png) -->
   <section id="sobre">
     <div class="sobre-container">
       <div class="sobre-img">
@@ -183,7 +183,7 @@
           <img src="Box rose gold.jpg" alt="Box rose gold" />
           <p>Box rose gold</p>
         </div>
-        <!-- Slides adicionais: box1.jpg a box15.jpg -->
+        <!-- Slides adicionais: box1.jpg a box15.jpg serão adicionados abaixo -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -261,9 +261,27 @@
   <!-- Swiper JS -->  
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <!-- Script para inicializar os Swipers e adicionar slides dinamicamente -->
+  <!-- Script para adicionar slides e inicializar os Swipers -->
   <script>
-    // Inicializa os carrosséis que já possuem estrutura estática
+    // Função para adicionar slides dinamicamente sem parênteses no nome
+    function addSlides(id, prefix, count) {
+      const container = document.querySelector(`#${id} .swiper-wrapper`);
+      for (let i = 1; i <= count; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${prefix}${i}.jpg" alt="${prefix} ${i}" />`;
+        container.appendChild(slide);
+      }
+    }
+    
+    // Adiciona os slides adicionais antes de inicializar os Swipers:
+    addSlides('box-swiper', 'box', 15);            // Slides para box1.jpg a box15.jpg
+    addSlides('sacadas-swiper', 'sacada', 6);         // Slides para sacada1.jpg a sacada6.jpg
+    addSlides('espelhos-swiper', 'espelho', 11);      // Slides para espelho1.jpg a espelho11.jpg
+    addSlides('projetos-especiais-swiper', 'especial', 39);  // Slides para especial1.jpg a especial39.jpg
+    addSlides('portas-swiper', 'porta', 17);          // Slides para porta1.jpg a porta17.jpg
+    
+    // Inicializa os carrosséis depois que os slides foram adicionados
     const swipers = document.querySelectorAll('.mySwiper');
     swipers.forEach((slider) => {
       new Swiper(slider, {
@@ -283,29 +301,6 @@
         }
       });
     });
-    
-    // Função para adicionar slides dinamicamente sem parênteses no nome do arquivo
-    function addSlides(id, prefix, count) {
-      const container = document.querySelector(`#${id} .swiper-wrapper`);
-      for (let i = 1; i <= count; i++) {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        slide.innerHTML = `<img src="${prefix}${i}.jpg" alt="${prefix} ${i}" />`;
-        container.appendChild(slide);
-      }
-    }
-    
-    // Adiciona slides adicionais para cada seção dinâmica:
-    // Seção Box: 15 imagens adicionais (box1.jpg a box15.jpg)
-    addSlides('box-swiper', 'box', 15);
-    // Seção Sacadas: 6 imagens (sacada1.jpg a sacada6.jpg)
-    addSlides('sacadas-swiper', 'sacada', 6);
-    // Seção Espelhos: 11 imagens (espelho1.jpg a espelho11.jpg)
-    addSlides('espelhos-swiper', 'espelho', 11);
-    // Seção Projetos Especiais: 39 imagens (especial1.jpg a especial39.jpg)
-    addSlides('projetos-especiais-swiper', 'especial', 39);
-    // Seção Portas: 17 imagens (porta1.jpg a porta17.jpg)
-    addSlides('portas-swiper', 'porta', 17);
   </script>
 </body>
 </html>
