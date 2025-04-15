@@ -152,6 +152,8 @@
       </div>
     </div>
   </section>
+  
+  <!-- Carrossel Box -->
   <section id="box">
     <h2>Box para Banheiro</h2>
     <div class="swiper mySwiper">
@@ -171,68 +173,111 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
+
+  <!-- Carrossel Sacadas -->
   <section id="sacadas">
     <h2>Fechamento de Sacadas</h2>
-    <div class="galeria">
-      <img src="sacada1.jpg" />
-      <img src="sacada2.jpg" />
-      <img src="sacada3.jpg" />
-      <img src="sacada4.jpg" />
-      <img src="sacada5.jpg" />
-      <img src="sacada6.jpg" />
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="sacada1.jpg" alt="Sacada 1" />
+          <p>Sacada 1</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="sacada2.jpg" alt="Sacada 2" />
+          <p>Sacada 2</p>
+        </div>
+        <!-- Continue até sacada6 -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
+
+  <!-- Carrossel Espelhos -->
   <section id="espelhos">
     <h2>Espelhos Decorativos</h2>
-    <div class="galeria">
-      <img src="espelho1.jpg" />
-      <img src="espelho2.jpg" />
-      <img src="espelho3.jpg" />
-      <!-- Continue até espelho11 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="espelho1.jpg" alt="Espelho 1" />
+          <p>Espelho 1</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="espelho2.jpg" alt="Espelho 2" />
+          <p>Espelho 2</p>
+        </div>
+        <!-- Continue até espelho11 -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
-  <section id="coberturas">
-    <h2>Coberturas de Vidro</h2>
-    <div class="galeria">
-      <img src="cobertura1.jpg" />
-      <img src="cobertura2.jpg" />
-      <img src="cobertura3.jpg" />
-    </div>
-  </section>
+
+  <!-- Carrossel Projetos Especiais -->
   <section id="projetos-especiais">
     <h2>Projetos Especiais</h2>
-    <div class="galeria">
-      <img src="especial1.jpg" />
-      <img src="especial2.jpg" />
-      <img src="especial3.jpg" />
-      <!-- Continue até especial39 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="especial1.jpg" alt="Especial 1" />
+          <p>Especial 1</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="especial2.jpg" alt="Especial 2" />
+          <p>Especial 2</p>
+        </div>
+        <!-- Continue até especial39 -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
+
+  <!-- Carrossel Portas -->
   <section id="portas">
     <h2>Portas de Vidro</h2>
-    <div class="galeria">
-      <img src="porta1.jpg" />
-      <img src="porta2.jpg" />
-      <img src="porta3.jpg" />
-      <!-- Continue até porta17 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="porta1.jpg" alt="Porta 1" />
+          <p>Porta 1</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="porta2.jpg" alt="Porta 2" />
+          <p>Porta 2</p>
+        </div>
+        <!-- Continue até porta17 -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
+
   <footer>
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+    const swipers = document.querySelectorAll('.swiper');
+    swipers.forEach(swiper => {
+      new Swiper(swiper, {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     });
   </script>
 </body>
