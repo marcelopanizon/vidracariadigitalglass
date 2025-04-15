@@ -152,7 +152,7 @@
     </div>
   </section>
   
-  <!-- Seção Quem Somos (imagem alterada para logo.png) -->
+  <!-- Seção Quem Somos com a imagem alterada para logo.png -->
   <section id="sobre">
     <div class="sobre-container">
       <div class="sobre-img">
@@ -170,7 +170,7 @@
     <h2>Box para Banheiro</h2>
     <div class="swiper mySwiper" id="box-swiper">
       <div class="swiper-wrapper">
-        <!-- Imagens originais da seção -->
+        <!-- Imagens originais da sessão -->
         <div class="swiper-slide">
           <img src="box padrão incolor e kit preto.jpg" alt="Box incolor com kit preto" />
           <p>Box incolor com kit preto</p>
@@ -217,7 +217,7 @@
     </div>
   </section>
   
-  <!-- Seção Coberturas (utilizando galeria fixa) -->
+  <!-- Seção Coberturas (galeria fixa) -->
   <section id="coberturas">
     <h2>Coberturas de Vidro</h2>
     <div class="galeria">
@@ -258,12 +258,12 @@
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
   
-  <!-- Swiper JS -->
+  <!-- Swiper JS -->  
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
-  <!-- Script para inicializar os Swipers -->
+  <!-- Script para inicializar os Swipers e adicionar slides dinamicamente -->
   <script>
-    // Inicializa todos os carrosséis que já possuem estrutura estática
+    // Inicializa os carrosséis que já possuem estrutura estática
     const swipers = document.querySelectorAll('.mySwiper');
     swipers.forEach((slider) => {
       new Swiper(slider, {
@@ -284,7 +284,7 @@
       });
     });
     
-    // Função para adicionar slides dinamicamente
+    // Função para adicionar slides dinamicamente sem parênteses no nome do arquivo
     function addSlides(id, prefix, count) {
       const container = document.querySelector(`#${id} .swiper-wrapper`);
       for (let i = 1; i <= count; i++) {
@@ -295,7 +295,7 @@
       }
     }
     
-    // Adiciona slides adicionais para cada seção dinâmica
+    // Adiciona slides adicionais para cada seção dinâmica:
     // Seção Box: 15 imagens adicionais (box1.jpg a box15.jpg)
     addSlides('box-swiper', 'box', 15);
     // Seção Sacadas: 6 imagens (sacada1.jpg a sacada6.jpg)
