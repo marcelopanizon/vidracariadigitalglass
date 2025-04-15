@@ -65,7 +65,7 @@
       text-decoration: none;
       font-size: 1rem;
     }
-    /* Estilos para o Swiper */
+    /* Estilo para o Swiper */
     .swiper {
       width: 100%;
       max-width: 1000px;
@@ -75,6 +75,7 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+      max-width: 100%;
       max-height: 600px;
     }
     .swiper-button-next, .swiper-button-prev {
@@ -83,15 +84,7 @@
     .swiper-pagination-bullet {
       background-color: #00aaff;
     }
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    footer a { color: #00aaff; text-decoration: none; }
-    .endereco { font-size: 0.9rem; margin-top: 10px; }
-    /* Responsividade */
+    /* Estilos para telas menores */
     @media (max-width: 768px) {
       .hero h1 { font-size: 1rem; }
       .button-group { flex-direction: column; }
@@ -108,15 +101,12 @@
       <a href="#contato">Contato</a>
     </nav>
   </header>
-  
   <section class="hero" id="home">
-    <!-- Substitua "logo.png" pelo arquivo da sua logo, que deve estar na mesma pasta -->
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
     <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
-    <a href="https://www.instagram.com/digital.glass" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
   </section>
-  
   <section id="servicos">
     <h2>Nossos Serviços</h2>
     <div class="button-group">
@@ -127,23 +117,22 @@
       <a href="#projetos-especiais">Projetos Especiais</a>
     </div>
   </section>
-
-  <!-- Seção Box -->
+  
+  <!-- Seção Box para Banheiro -->
   <section id="box">
     <h2>Box para Banheiro</h2>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <!-- Imagens locais na raiz do projeto -->
-          <img src="box1.jpg" alt="Box incolor com kit preto" />
+          <img src="box padrão incolor e kit preto.jpg" alt="Box incolor com kit preto" />
           <p>Box incolor com kit preto</p>
         </div>
         <div class="swiper-slide">
-          <img src="box2.jpg" alt="Box champagne" />
+          <img src="box champagne.jpg" alt="Box champagne" />
           <p>Box champagne</p>
         </div>
         <div class="swiper-slide">
-          <img src="box3.jpg" alt="Box rose gold" />
+          <img src="Box rose gold.jpg" alt="Box rose gold" />
           <p>Box rose gold</p>
         </div>
       </div>
@@ -152,7 +141,7 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
+  
   <!-- Seção Sacadas -->
   <section id="sacadas">
     <h2>Fechamento de Sacadas</h2>
@@ -173,7 +162,7 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
+  
   <!-- Seção Espelhos -->
   <section id="espelhos">
     <h2>Espelhos Decorativos</h2>
@@ -194,7 +183,7 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
+  
   <!-- Seção Coberturas -->
   <section id="coberturas">
     <h2>Coberturas de Vidro</h2>
@@ -215,7 +204,7 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
+  
   <!-- Seção Projetos Especiais -->
   <section id="projetos-especiais">
     <h2>Projetos Especiais</h2>
@@ -244,11 +233,11 @@
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Inicializando todos os carrosséis com a classe .mySwiper
-    const swipers = document.querySelectorAll('.mySwiper');
-    swipers.forEach((slider) => {
+    const sliders = document.querySelectorAll('.mySwiper');
+    sliders.forEach((slider) => {
       new Swiper(slider, {
         loop: true,
+        slidesPerView: 1, // Padrão: 1 slide por vez
         pagination: {
           el: slider.querySelector('.swiper-pagination'),
           clickable: true,
@@ -257,6 +246,11 @@
           nextEl: slider.querySelector('.swiper-button-next'),
           prevEl: slider.querySelector('.swiper-button-prev'),
         },
+        breakpoints: {
+          // Em telas grandes, exiba 2 slides por vez (ajuste conforme necessário)
+          1024: { slidesPerView: 2 },
+          768: { slidesPerView: 1 }
+        }
       });
     });
   </script>
