@@ -65,38 +65,23 @@
       text-decoration: none;
       font-size: 1rem;
     }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .galeria img {
+    /* Estilos para o Swiper */
+    .swiper {
       width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-    }
-    #sobre { background-color: rgba(255, 255, 255, 0.8); }
-    #sobre .sobre-container {
       max-width: 1000px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
+      margin: 0 auto;
     }
-    .sobre-texto {
-      flex: 1;
-      min-width: 300px;
-      color: #000;
-    }
-    .sobre-img {
-      flex: 1;
-      min-width: 300px;
-    }
-    .sobre-img img {
+    .swiper-slide img {
       width: 100%;
-      border-radius: 10px;
+      height: auto;
+      object-fit: cover;
+      max-height: 600px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #00aaff;
+    }
+    .swiper-pagination-bullet {
+      background-color: #00aaff;
     }
     footer {
       background-color: #333;
@@ -106,44 +91,11 @@
     }
     footer a { color: #00aaff; text-decoration: none; }
     .endereco { font-size: 0.9rem; margin-top: 10px; }
-
-    /* Estilos para o Swiper */
-    .swiper {
-      width: 100%;
-      height: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .swiper-button-next, .swiper-button-prev {
-      color: #00aaff;
-    }
-    .swiper-pagination-bullet {
-      background-color: #00aaff;
-    }
-
-    /* Estilos para telas menores */
+    /* Responsividade */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1rem;
-      }
-      .button-group {
-        flex-direction: column;
-      }
-      .button-group a {
-        width: 100%;
-        text-align: center;
-      }
-      .sobre-container {
-        flex-direction: column;
-      }
-      .sobre-img, .sobre-texto {
-        min-width: 100%;
-      }
+      .hero h1 { font-size: 1rem; }
+      .button-group { flex-direction: column; }
+      .button-group a { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -156,12 +108,15 @@
       <a href="#contato">Contato</a>
     </nav>
   </header>
+  
   <section class="hero" id="home">
+    <!-- Substitua "logo.png" pelo arquivo da sua logo, que deve estar na mesma pasta -->
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
     <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
-    <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/digital.glass" target="_blank">Instagram</a>
   </section>
+  
   <section id="servicos">
     <h2>Nossos Serviços</h2>
     <div class="button-group">
@@ -179,15 +134,16 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="box padrão incolor e kit preto.jpg" alt="Box incolor com kit preto" />
+          <!-- Imagens locais na raiz do projeto -->
+          <img src="box1.jpg" alt="Box incolor com kit preto" />
           <p>Box incolor com kit preto</p>
         </div>
         <div class="swiper-slide">
-          <img src="box champagne.jpg" alt="Box champagne" />
+          <img src="box2.jpg" alt="Box champagne" />
           <p>Box champagne</p>
         </div>
         <div class="swiper-slide">
-          <img src="Box rose gold.jpg" alt="Box rose gold" />
+          <img src="box3.jpg" alt="Box rose gold" />
           <p>Box rose gold</p>
         </div>
       </div>
@@ -203,13 +159,13 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/dRp3oyZ.jpg" alt="Sacada 1" />
+          <img src="sacada1.jpg" alt="Sacada 1" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/d9RdcHr.jpg" alt="Sacada 2" />
+          <img src="sacada2.jpg" alt="Sacada 2" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/UIPoU6M.jpg" alt="Sacada 3" />
+          <img src="sacada3.jpg" alt="Sacada 3" />
         </div>
       </div>
       <div class="swiper-button-next"></div>
@@ -224,13 +180,13 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/UbhNR41.jpg" alt="Espelho 1" />
+          <img src="espelho1.jpg" alt="Espelho 1" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/bVYoTGm.jpg" alt="Espelho 2" />
+          <img src="espelho2.jpg" alt="Espelho 2" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/ZRIicxj.jpg" alt="Espelho 3" />
+          <img src="espelho3.jpg" alt="Espelho 3" />
         </div>
       </div>
       <div class="swiper-button-next"></div>
@@ -245,13 +201,13 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/gnpUOM0.jpg" alt="Cobertura 1" />
+          <img src="cobertura1.jpg" alt="Cobertura 1" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/kz8mQKD.jpg" alt="Cobertura 2" />
+          <img src="cobertura2.jpg" alt="Cobertura 2" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/B69SvDG.jpg" alt="Cobertura 3" />
+          <img src="cobertura3.jpg" alt="Cobertura 3" />
         </div>
       </div>
       <div class="swiper-button-next"></div>
@@ -266,13 +222,13 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/txhxhoA.jpg" alt="Projeto Especial 1" />
+          <img src="projeto1.jpg" alt="Projeto Especial 1" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/sI4OW02.jpg" alt="Projeto Especial 2" />
+          <img src="projeto2.jpg" alt="Projeto Especial 2" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.imgur.com/K9QrLGG.jpg" alt="Projeto Especial 3" />
+          <img src="projeto3.jpg" alt="Projeto Especial 3" />
         </div>
       </div>
       <div class="swiper-button-next"></div>
@@ -280,9 +236,29 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-
+  
   <footer>
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Inicializando todos os carrosséis com a classe .mySwiper
+    const swipers = document.querySelectorAll('.mySwiper');
+    swipers.forEach((slider) => {
+      new Swiper(slider, {
+        loop: true,
+        pagination: {
+          el: slider.querySelector('.swiper-pagination'),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: slider.querySelector('.swiper-button-next'),
+          prevEl: slider.querySelector('.swiper-button-prev'),
+        },
+      });
+    });
+  </script>
+</body>
+</html>
