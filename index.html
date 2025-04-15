@@ -56,7 +56,6 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
     .button-group a {
       background-color: #00aaff;
@@ -66,24 +65,7 @@
       text-decoration: none;
       font-size: 1rem;
     }
-    .swiper {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .swiper-slide p {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #fff;
-    }
-    #sobre {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
+    #sobre { background-color: rgba(255, 255, 255, 0.8); }
     #sobre .sobre-container {
       max-width: 1000px;
       margin: auto;
@@ -112,7 +94,21 @@
       text-align: center;
     }
     footer a { color: #00aaff; text-decoration: none; }
-    .endereco { font-size: 0.9rem; margin-top: 10px; }
+    .swiper {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .swiper-slide img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .swiper-slide p {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -151,33 +147,50 @@
       </div>
       <div class="sobre-texto">
         <h2>Quem Somos</h2>
-        <p> Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado. Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendente personalizado ajudando você a encontrar a melhor solução para o seu espaço. Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história! </p>
+        <p> Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento. Contamos com uma equipe especializada e um atendimento personalizado e humanizado. Nosso compromisso é com a excelência e a satisfação do cliente. Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendente personalizado ajudando você a encontar a melhor solução para o seu espaço. Agradecemos por considerar a Digital Glass para suas necessidades em vidro. Estamos ansiosos para trabalhar com você e fazer parte da sua história! </p>
       </div>
     </div>
   </section>
 
-  <!-- As seções com os carrosséis (box, espelhos, sacadas etc.) serão adicionadas na próxima parte -->
+  <!-- Carrossel dinâmico -->
+  <section id="box"><h2>Box para Banheiro</h2><div class="swiper mySwiper box-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
+  <section id="sacadas"><h2>Fechamento de Sacadas</h2><div class="swiper mySwiper sacada-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
+  <section id="espelhos"><h2>Espelhos Decorativos</h2><div class="swiper mySwiper espelho-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
+  <section id="coberturas"><h2>Coberturas de Vidro</h2><div class="swiper mySwiper cobertura-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
+  <section id="projetos-especiais"><h2>Projetos Especiais</h2><div class="swiper mySwiper especial-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
+  <section id="portas"><h2>Portas</h2><div class="swiper mySwiper porta-swiper"><div class="swiper-wrapper"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div></div></section>
 
-  <footer>
+  <footer id="contato">
     <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    document.querySelectorAll('.swiper').forEach((el, index) => {
-      new Swiper(el, {
+    function loadSlides(selector, prefix, total) {
+      const container = document.querySelector(`.${selector} .swiper-wrapper`);
+      for (let i = 1; i <= total; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${prefix}${i}.jpg" alt="${prefix}${i}" />`;
+        container.appendChild(slide);
+      }
+      new Swiper(`.${selector}`, {
         loop: true,
-        pagination: {
-          el: el.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
+        pagination: { el: `.swiper-pagination`, clickable: true },
         navigation: {
-          nextEl: el.querySelector('.swiper-button-next'),
-          prevEl: el.querySelector('.swiper-button-prev'),
+          nextEl: `.swiper-button-next`,
+          prevEl: `.swiper-button-prev`,
         },
       });
-    });
+    }
+
+    loadSlides("box-swiper", "box", 15);
+    loadSlides("sacada-swiper", "sacada", 6);
+    loadSlides("espelho-swiper", "espelho", 11);
+    loadSlides("cobertura-swiper", "cobertura", 3);
+    loadSlides("especial-swiper", "especial", 39);
+    loadSlides("porta-swiper", "porta", 17);
   </script>
 </body>
 </html>
