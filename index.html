@@ -53,7 +53,7 @@
     }
     .swiper {
       width: 100%;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
     }
     .swiper-slide img {
@@ -119,61 +119,60 @@
     <a href="https://www.instagram.com/digital.glass" target="_blank">Instagram</a>
   </section>
 
+  <!-- As sessões com Swiper -->
   <section id="box">
     <h2>Box para Banheiro</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper boxSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="box padrão incolor e kit preto.jpg" alt="Box 1" /></div>
-        <div class="swiper-slide"><img src="box champagne.jpg" alt="Box 2" /></div>
-        <div class="swiper-slide"><img src="Box rose gold.jpg" alt="Box 3" /></div>
-        <!-- Novas imagens -->
-        ${[...Array(15)].map((_, i) => `<div class="swiper-slide"><img src="box${i + 1}.jpg" alt="Box ${i + 1}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="box padrão incolor e kit preto.jpg" alt="Box 1"></div>
+        <div class="swiper-slide"><img src="box champagne.jpg" alt="Box 2"></div>
+        <div class="swiper-slide"><img src="Box rose gold.jpg" alt="Box 3"></div>
+        <div class="swiper-slide"><img src="box1.jpg" alt="Box 4"></div>
       </div>
     </div>
   </section>
 
   <section id="sacadas">
     <h2>Fechamento de Sacadas</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper sacadaSwiper">
       <div class="swiper-wrapper">
-        ${[...Array(6)].map((_, i) => `<div class="swiper-slide"><img src="sacada (${i + 1}).jpg" alt="Sacada ${i + 1}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="sacada (1).jpg" alt="Sacada 1"></div>
       </div>
     </div>
   </section>
 
   <section id="espelhos">
     <h2>Espelhos Decorativos</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper espelhoSwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="espelho1.jpg" alt="Espelho 1" /></div>
-        ${[...Array(10)].map((_, i) => `<div class="swiper-slide"><img src="espelho${i + 2}.jpg" alt="Espelho ${i + 2}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="espelho1.jpg" alt="Espelho 1"></div>
       </div>
     </div>
   </section>
 
   <section id="coberturas">
     <h2>Coberturas de Vidro</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper coberturaSwiper">
       <div class="swiper-wrapper">
-        ${[...Array(1)].map((_, i) => `<div class="swiper-slide"><img src="cobertura${i + 1}.jpg" alt="Cobertura ${i + 1}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="cobertura1.jpg" alt="Cobertura 1"></div>
       </div>
     </div>
   </section>
 
   <section id="projetos-especiais">
     <h2>Projetos Especiais</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper especiaisSwiper">
       <div class="swiper-wrapper">
-        ${[...Array(39)].map((_, i) => `<div class="swiper-slide"><img src="especiais (${i + 1}).jpg" alt="Especial ${i + 1}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="especiais (1).jpg" alt="Especial 1"></div>
       </div>
     </div>
   </section>
 
   <section id="portas">
     <h2>Portas</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper portaSwiper">
       <div class="swiper-wrapper">
-        ${[...Array(17)].map((_, i) => `<div class="swiper-slide"><img src="porta(${i + 1}).jpg" alt="Porta ${i + 1}" /></div>`).join('')}
+        <div class="swiper-slide"><img src="porta(5).jpg" alt="Porta 5"></div>
       </div>
     </div>
   </section>
@@ -195,11 +194,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    document.querySelectorAll('.mySwiper').forEach(swiperEl => {
-      new Swiper(swiperEl, {
+    const swiperClasses = ['boxSwiper', 'sacadaSwiper', 'espelhoSwiper', 'coberturaSwiper', 'especiaisSwiper', 'portaSwiper'];
+    swiperClasses.forEach(cls => {
+      new Swiper(`.${cls}`, {
         loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -209,12 +207,8 @@
           prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-          768: {
-            slidesPerView: 2
-          },
-          1024: {
-            slidesPerView: 3
-          }
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 30 }
         }
       });
     });
