@@ -32,7 +32,7 @@
       padding: 20px;
       text-align: center;
     }
-    .hero img { max-width: 250px; margin-bottom: 10px; }
+    .hero img { max-width: 300px; margin-bottom: 10px; }
     .hero h1 { font-size: 1.2rem; color: #333; margin-bottom: 12px; }
     .hero a {
       background-color: #00aaff;
@@ -65,7 +65,7 @@
       text-decoration: none;
       font-size: 1rem;
     }
-    /* Seção Quem Somos - Mantendo exatamente o mesmo texto do código anterior */
+    /* Seção Quem Somos */
     #sobre { background-color: rgba(255, 255, 255, 0.8); }
     #sobre .sobre-container {
       max-width: 1000px;
@@ -96,19 +96,16 @@
     }
     footer a { color: #00aaff; text-decoration: none; }
     .endereco { font-size: 0.9rem; margin-top: 10px; }
-
     /* Estilos para o Swiper */
     .swiper {
       width: 100%;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
     }
     .swiper-slide img {
       width: 100%;
-      height: auto;
+      border-radius: 10px;
       object-fit: cover;
-      max-width: 100%;
-      max-height: 600px;
     }
     .swiper-button-next, .swiper-button-prev {
       color: #00aaff;
@@ -116,7 +113,6 @@
     .swiper-pagination-bullet {
       background-color: #00aaff;
     }
-    
     /* Estilos para telas menores */
     @media (max-width: 768px) {
       .hero h1 { font-size: 1rem; }
@@ -152,14 +148,15 @@
       <a href="#espelhos">Espelhos</a>
       <a href="#coberturas">Coberturas</a>
       <a href="#projetos-especiais">Projetos Especiais</a>
+      <a href="#portas">Portas</a>
     </div>
   </section>
   
-  <!-- Seção Quem Somos com o mesmo texto do código anterior -->
+  <!-- Seção Quem Somos (imagem alterada para logo.png) -->
   <section id="sobre">
     <div class="sobre-container">
       <div class="sobre-img">
-        <img src="https://vidracariadigitalglass.com.br/wp-content/uploads/2023/08/vidracaria-digital-glass.jpeg" alt="Vidraçaria" />
+        <img src="logo.png" alt="Vidraçaria" />
       </div>
       <div class="sobre-texto">
         <h2>Quem Somos</h2>
@@ -171,8 +168,9 @@
   <!-- Seção Box para Banheiro -->
   <section id="box">
     <h2>Box para Banheiro</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" id="box-swiper">
       <div class="swiper-wrapper">
+        <!-- Imagens originais da seção -->
         <div class="swiper-slide">
           <img src="box padrão incolor e kit preto.jpg" alt="Box incolor com kit preto" />
           <p>Box incolor com kit preto</p>
@@ -185,6 +183,7 @@
           <img src="Box rose gold.jpg" alt="Box rose gold" />
           <p>Box rose gold</p>
         </div>
+        <!-- Slides adicionais: box1.jpg a box15.jpg -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -195,17 +194,9 @@
   <!-- Seção Sacadas -->
   <section id="sacadas">
     <h2>Fechamento de Sacadas</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" id="sacadas-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="sacada1.jpg" alt="Sacada 1" />
-        </div>
-        <div class="swiper-slide">
-          <img src="sacada2.jpg" alt="Sacada 2" />
-        </div>
-        <div class="swiper-slide">
-          <img src="sacada3.jpg" alt="Sacada 3" />
-        </div>
+        <!-- Slides serão adicionados dinamicamente para sacada1.jpg a sacada6.jpg -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -216,17 +207,9 @@
   <!-- Seção Espelhos -->
   <section id="espelhos">
     <h2>Espelhos Decorativos</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" id="espelhos-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="espelho1.jpg" alt="Espelho 1" />
-        </div>
-        <div class="swiper-slide">
-          <img src="espelho2.jpg" alt="Espelho 2" />
-        </div>
-        <div class="swiper-slide">
-          <img src="espelho3.jpg" alt="Espelho 3" />
-        </div>
+        <!-- Slides serão adicionados dinamicamente para espelho1.jpg a espelho11.jpg -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -234,41 +217,35 @@
     </div>
   </section>
   
-  <!-- Seção Coberturas -->
+  <!-- Seção Coberturas (utilizando galeria fixa) -->
   <section id="coberturas">
     <h2>Coberturas de Vidro</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="cobertura1.jpg" alt="Cobertura 1" />
-        </div>
-        <div class="swiper-slide">
-          <img src="cobertura2.jpg" alt="Cobertura 2" />
-        </div>
-        <div class="swiper-slide">
-          <img src="cobertura3.jpg" alt="Cobertura 3" />
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+    <div class="galeria">
+      <img src="https://i.imgur.com/gnpUOM0.jpg" alt="Cobertura 1" />
+      <img src="https://i.imgur.com/kz8mQKD.jpg" alt="Cobertura 2" />
+      <img src="https://i.imgur.com/B69SvDG.jpg" alt="Cobertura 3" />
     </div>
   </section>
   
   <!-- Seção Projetos Especiais -->
   <section id="projetos-especiais">
     <h2>Projetos Especiais</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" id="projetos-especiais-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="projeto1.jpg" alt="Projeto Especial 1" />
-        </div>
-        <div class="swiper-slide">
-          <img src="projeto2.jpg" alt="Projeto Especial 2" />
-        </div>
-        <div class="swiper-slide">
-          <img src="projeto3.jpg" alt="Projeto Especial 3" />
-        </div>
+        <!-- Slides serão adicionados dinamicamente para especial1.jpg a especial39.jpg -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  
+  <!-- Seção Portas -->
+  <section id="portas">
+    <h2>Portas</h2>
+    <div class="swiper mySwiper" id="portas-swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides serão adicionados dinamicamente para porta1.jpg a porta17.jpg -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -281,13 +258,17 @@
     <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
   </footer>
   
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- Script para inicializar os Swipers -->
   <script>
-    const sliders = document.querySelectorAll('.mySwiper');
-    sliders.forEach((slider) => {
+    // Inicializa todos os carrosséis que já possuem estrutura estática
+    const swipers = document.querySelectorAll('.mySwiper');
+    swipers.forEach((slider) => {
       new Swiper(slider, {
         loop: true,
-        slidesPerView: 1, // Exibe 1 slide por vez por padrão
+        slidesPerView: 1,
         pagination: {
           el: slider.querySelector('.swiper-pagination'),
           clickable: true,
@@ -302,6 +283,29 @@
         }
       });
     });
+    
+    // Função para adicionar slides dinamicamente
+    function addSlides(id, prefix, count) {
+      const container = document.querySelector(`#${id} .swiper-wrapper`);
+      for (let i = 1; i <= count; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `<img src="${prefix}${i}.jpg" alt="${prefix} ${i}" />`;
+        container.appendChild(slide);
+      }
+    }
+    
+    // Adiciona slides adicionais para cada seção dinâmica
+    // Seção Box: 15 imagens adicionais (box1.jpg a box15.jpg)
+    addSlides('box-swiper', 'box', 15);
+    // Seção Sacadas: 6 imagens (sacada1.jpg a sacada6.jpg)
+    addSlides('sacadas-swiper', 'sacada', 6);
+    // Seção Espelhos: 11 imagens (espelho1.jpg a espelho11.jpg)
+    addSlides('espelhos-swiper', 'espelho', 11);
+    // Seção Projetos Especiais: 39 imagens (especial1.jpg a especial39.jpg)
+    addSlides('projetos-especiais-swiper', 'especial', 39);
+    // Seção Portas: 17 imagens (porta1.jpg a porta17.jpg)
+    addSlides('portas-swiper', 'porta', 17);
   </script>
 </body>
 </html>
