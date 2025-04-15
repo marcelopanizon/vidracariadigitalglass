@@ -13,187 +13,114 @@
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+      padding-top: 80px;
     }
-    header { text-align: center; padding: 20px 0; }
-    nav {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px 0;
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-    nav a {
+
+    .navbar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
       color: #fff;
       text-decoration: none;
-      margin: 0 12px;
       font-weight: bold;
       text-transform: uppercase;
     }
-    nav a:hover { color: #00aaff; }
-    .hero {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      text-align: center;
-    }
-    .hero img { max-width: 300px; margin-bottom: 10px; }
-    .hero h1 { font-size: 1.2rem; color: #333; margin-bottom: 12px; }
-    .hero a {
-      background-color: #00aaff;
-      color: #fff;
-      padding: 12px 26px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      display: inline-block;
-      margin: 8px;
-    }
-    section { padding: 40px 20px; }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #fff;
-    }
-    .swiper {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .swiper-slide p {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #fff;
-    }
-    #sobre {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #000;
-    }
-    .sobre-container {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
-    .sobre-texto {
-      flex: 1;
-      min-width: 300px;
-    }
-    .sobre-img {
-      flex: 1;
-      min-width: 300px;
-    }
-    .sobre-img img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    footer a {
+
+    .nav-links a:hover {
       color: #00aaff;
-      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-links a {
+        padding: 10px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Quem Somos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#box">Box</a>
+        <a href="#sacadas">Sacadas</a>
+        <a href="#espelhos">Espelhos</a>
+        <a href="#coberturas">Coberturas</a>
+        <a href="#projetos-especiais">Projetos Especiais</a>
+        <a href="#portas">Portas</a>
+        <a href="#sobre">Quem Somos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
-  <section class="hero" id="home">
-    <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
-    <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
-    <a href="https://wa.me/5548999711274" target="_blank">Solicitar Orçamento</a>
-    <a href="https://www.instagram.com/digital.glass" target="_blank">Instagram</a>
-  </section>
-  <section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <div class="button-group" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
-      <a href="#box">Box</a>
-      <a href="#sacadas">Sacadas</a>
-      <a href="#espelhos">Espelhos</a>
-      <a href="#coberturas">Coberturas</a>
-      <a href="#projetos-especiais">Projetos Especiais</a>
-      <a href="#portas">Portas</a>
-    </div>
-  </section>
-  <section id="sobre">
-    <div class="sobre-container">
-      <div class="sobre-img">
-        <img src="logo.png" alt="Vidraçaria" />
-      </div>
-      <div class="sobre-texto">
-        <h2>Quem Somos</h2>
-        <p> Uma empresa preparada para oferecer soluções em vidros de alta qualidade para qualquer projeto de envidraçamento.Contamos com uma equipe especializada e um atendimento personalizado e humanizado .Nosso compromisso é com a excelência e a satisfação do cliente.Acreditamos que cada projeto é único, por isso estamos sempre prontos para ouvir suas ideias e oferecer um atendente personalizado ajudando você a encontar a melhor solução para o seu espaço.Agradecemos por considerar a Digital Glass para suas necessidades em vidro.Estamos ansiosos para trabalhar com você e fazer parte da sua história! </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- As seções com carrossel -->
-  <div id="carrossel-secoes"></div>
+  <!-- Aqui continua o restante do seu código normalmente -->
 
-  <footer>
-    <p>Rua Paulino Pedro Hermes, 2427 Sala 3, Bairro Nossa Senhora do Rosário, São José, SC</p>
-    <p>WhatsApp: <a href="https://wa.me/5548999711274">48 99971-1274</a></p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const secoes = [
-      { id: 'box', titulo: 'Box para Banheiro', prefixo: 'box', total: 15 },
-      { id: 'sacadas', titulo: 'Fechamento de Sacadas', prefixo: 'sacada', total: 6 },
-      { id: 'espelhos', titulo: 'Espelhos Decorativos', prefixo: 'espelho', total: 11 },
-      { id: 'coberturas', titulo: 'Coberturas de Vidro', prefixo: 'cobertura', total: 3 },
-      { id: 'projetos-especiais', titulo: 'Projetos Especiais', prefixo: 'especial', total: 39 },
-      { id: 'portas', titulo: 'Portas', prefixo: 'porta', total: 17 }
-    ];
-
-    const container = document.getElementById('carrossel-secoes');
-
-    secoes.forEach(secao => {
-      const section = document.createElement('section');
-      section.id = secao.id;
-
-      section.innerHTML = `
-        <h2>${secao.titulo}</h2>
-        <div class="swiper ${secao.id}Swiper">
-          <div class="swiper-wrapper">
-            ${Array.from({ length: secao.total }, (_, i) => `
-              <div class="swiper-slide">
-                <img src="${secao.prefixo}${i + 1}.jpg" alt="${secao.prefixo}${i + 1}" />
-              </div>
-            `).join('')}
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      `;
-
-      container.appendChild(section);
-
-      new Swiper(`.${secao.id}Swiper`, {
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("show");
     });
   </script>
 </body>
