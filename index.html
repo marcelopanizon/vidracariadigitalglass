@@ -115,7 +115,7 @@
   <section class="hero" id="home">
     <img src="logo.png" alt="Logo Vidraçaria Digital Glass" />
     <h1>A sua vidraçaria de confiança, à um click de distância!</h1>
-    <a href="javascript:void(0);" onclick="window.location.href='obrigado.html'; window.open('https://wa.me/5548999711274', '_blank');">Solicitar Orçamento</a>
+    <a href="javascript:void(0);" onclick="handleWhatsappClick()">Solicitar Orçamento</a>
     <a href="https://www.instagram.com/digital.glass?igsh=MW90cXh2bXZ5cnBjeg==" target="_blank">Instagram</a>
   </section>
   <section id="servicos">
@@ -177,7 +177,7 @@
         <h2>${secao.titulo}</h2>
         <div class="swiper ${secao.id}Swiper">
           <div class="swiper-wrapper">
-            ${Array.from({ length: secao.total }, (_, i) => `
+            ${Array.from({ length: secao.total }, (_, i) => ` 
               <div class="swiper-slide">
                 <img src="${secao.prefixo}${i + 1}.jpg" alt="${secao.titulo} ${i + 1}" />
               </div>`).join('')}
@@ -211,6 +211,18 @@
         },
       });
     });
+
+    // Função para manipular o clique no WhatsApp
+    function handleWhatsappClick() {
+      // Redireciona para a página de agradecimento
+      window.location.href = "obrigado.html";
+
+      // Atraso de 1 segundo para garantir que o redirecionamento aconteça primeiro
+      setTimeout(function() {
+        // Depois de 1 segundo, abre o WhatsApp
+        window.open("https://wa.me/5548999711274", "_blank");
+      }, 1000);
+    }
   </script>
 </body>
 </html>
