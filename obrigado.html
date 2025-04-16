@@ -13,6 +13,11 @@
     gtag('js', new Date());
 
     gtag('config', 'AW-16973661221');
+
+    // ** Adicionando o código para a conversão **
+    gtag('event', 'conversion', {
+      'send_to': 'AW-16973661221/abc123xyz45'  <!-- Substitua pelo seu rótulo de conversão -->
+    });
   </script>
 
 </head>
@@ -21,10 +26,10 @@
   <p>Você será redirecionado para o WhatsApp em alguns segundos...</p>
 
   <script>
-    // Redirecionar automaticamente para o WhatsApp após 2 segundos
+    // Redirecionar automaticamente para o WhatsApp após 2 segundos (ajustado para garantir a conversão)
     setTimeout(function() {
       window.location.href = "https://wa.me/5548999711274";
-    }, 5000);
+    }, 2000);  <!-- Redirecionamento agora em 2 segundos -->
   </script>
 </body>
 </html>
