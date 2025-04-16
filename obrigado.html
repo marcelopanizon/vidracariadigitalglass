@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado pela sua Solicitação</title>
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16973661221"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16973661221"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'AW-16973661221');
-</script>
+    gtag('config', 'AW-16973661221');
+  </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obrigado pelo Contato</title>
 </head>
 <body>
-  <h1>Obrigado por entrar em contato conosco! Em breve retornaremos.</h1>
+  <h1>Obrigado por entrar em contato!</h1>
+  <p>Você será redirecionado para o WhatsApp em alguns segundos...</p>
+
+  <script>
+    // Redirecionar automaticamente para o WhatsApp após 2 segundos
+    setTimeout(function() {
+      window.location.href = "https://wa.me/5548999711274";
+    }, 5000);
+  </script>
 </body>
 </html>
