@@ -4,32 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obrigado pela sua Solicitação</title>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16973661221"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'AW-16973661221');
+  </script>
 
-    // ** Adicionando o código para a conversão **
+  <!-- Snippet de conversão do Google Ads -->
+  <script>
     gtag('event', 'conversion', {
-      'send_to': 'AW-16973661221/abc123xyz45'  <!-- Substitua pelo seu rótulo de conversão -->
+        'send_to': 'AW-16973661221/_raLCLqvy7kaEKWI1p0_',
+        'value': 2.0,
+        'currency': 'BRL'
     });
   </script>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #00aaff;
+    }
+  </style>
 </head>
 <body>
   <h1>Obrigado por entrar em contato!</h1>
   <p>Você será redirecionado para o WhatsApp em alguns segundos...</p>
 
   <script>
-    // Redirecionar automaticamente para o WhatsApp após 2 segundos (ajustado para garantir a conversão)
+    // Redirecionar automaticamente para o WhatsApp após 5 segundos
     setTimeout(function() {
       window.location.href = "https://wa.me/5548999711274";
-    }, 2000);  <!-- Redirecionamento agora em 2 segundos -->
+    }, 5000);
   </script>
 </body>
 </html>
